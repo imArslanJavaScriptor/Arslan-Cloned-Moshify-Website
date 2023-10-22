@@ -2,7 +2,7 @@
   --color-primary: #2584ff;
   --color-secondary: #00d9ff;
   --color-accent: #ff3400;
-  --color-heading: #1b0760;
+  --color-headings: #1b0760;
   --color-body: #918ca4;
 }
 
@@ -61,62 +61,90 @@ p {
 
 /* Links */
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .link-arrow {
-    color: var(--color-accent);
-    text-transform: uppercase;
-    font-size: 2rem;
-    font-weight: bold;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .link-arrow::after {
-    content: "-->";
-    margin-left: 5px;
-    transition: margin 0.15s;
+  content: "-->";
+  margin-left: 5px;
+  transition: margin 0.15s;
 }
 
 .link-arrow:hover::after {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 @media screen and (min-width: 1024px) {
-    .link-arrow {
-        font-size: 1.5rem;
-    }
+  .link-arrow {
+    font-size: 1.5rem;
+  }
 }
-
 
 /* Badges */
 .badge {
-    border-radius: 20px;
-    font-size: 2rem;
-    font-weight: 600;
-    padding: 0.5rem 2rem;
-    white-space: nowrap;
+  border-radius: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0.5rem 2rem;
+  white-space: nowrap;
 }
 
 .badge--primary {
-    background: var(--color-primary);
-    color: #fff;
+  background: var(--color-primary);
+  color: #fff;
 }
 
 .badge--secondary {
-    background: var(--color-secondary);
-    color: #fff;
+  background: var(--color-secondary);
+  color: #fff;
 }
 
 .badge--small {
-    font-size: 1.6rem;
+  font-size: 1.6rem;
 }
 
 @media screen and (min-width: 1024px) {
-    .badge {
-        font-size: 1.5rem;
-    }
+  .badge {
+    font-size: 1.5rem;
+  }
 
-    .badge--small {
-        font-size: 1.2rem;
+  .badge--small {
+    font-size: 1.2rem;
+  }
+}
+
+/* Lists */
+.list {
+  color: var(--color-headings);
+  list-style: none;
+  padding-left: 0;
+}
+
+.list--inline .list__item {
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+.list--tick {
+    /* Add SVG image of tick icon */
+    list-style-image: url(../images/tick.svg);
+    padding-left: 3rem;
+}
+
+.list--tick .list__item {
+    padding-left: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .list--tick .list__item {
+        padding-left: 0; 
     }
 }
